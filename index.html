@@ -1,3 +1,21 @@
+<?php
+
+if($_POST["submit"]) {
+    $recipient="d10010101u@gmail.com";
+    $subject="Form to email message";
+    $sender=$_POST["sender"];
+    $senderEmail=$_POST["senderEmail"];
+    $message=$_POST["message"];
+
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+
+    $thankYou="<p>Thank you! Your message has been sent.</p>";
+}
+
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -242,7 +260,7 @@
 									<p>Create an oasis of calm and balance, and invite harmonious energy into your home.</p>
 								</section>
 								<section>
-									<span class="icon solid style2 major fa-pen-ruler"></span>
+									<span class="icon solid style2 major fa-pen-ruler "></span>
 									<h3>Floor Plan Design</h3>
 									<p>We can collaborate with your architect or contractor to ensure the energy flows smoothly through your home.</p>
 								</section>
@@ -277,12 +295,12 @@
 							<form method="post" action="#">
 								<div class="fields">
 									<div class="field half">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" value="" />
+										<label for="sender">Name</label>
+										<input type="text" name="sender" id="sender" value="" />
 									</div>
 									<div class="field half">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" value="" />
+										<label for="senderEmail">Email</label>
+										<input type="senderEmail" name="senderEmail" id="senderEmail" value="" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
