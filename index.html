@@ -1,21 +1,3 @@
-<?php
-
-if($_POST["submit"]) {
-    $recipient="d10010101u@gmail.com";
-    $subject="Form to email message";
-    $sender=$_POST["sender"];
-    $senderEmail=$_POST["senderEmail"];
-    $message=$_POST["message"];
-
-    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
-
-    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
-
-    $thankYou="<p>Thank you! Your message has been sent.</p>";
-}
-
-?>
-
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -255,12 +237,12 @@ if($_POST["submit"]) {
 							<p></p>
 							<div class="items style1 medium onscroll-fade-in">
 								<section>
-									<span class="icon style2 major fa-house"></span>
+									<span class="icon style2 major fa-house-chimney"></span>
 									<h3>Room Layout</h3>
 									<p>Create an oasis of calm and balance, and invite harmonious energy into your home.</p>
 								</section>
 								<section>
-									<span class="icon solid style2 major fa-pen-ruler "></span>
+									<span class="icon solid style2 major fa-square-pen "></span>
 									<h3>Floor Plan Design</h3>
 									<p>We can collaborate with your architect or contractor to ensure the energy flows smoothly through your home.</p>
 								</section>
@@ -280,7 +262,7 @@ if($_POST["submit"]) {
 									<p>On-site and video consultations for prospective home buyers requiring a discerning eye for the bones and story of a house.</p>
 								</section>
 								<section>
-									<span class="icon style2 major fa-brush"></span>
+									<span class="icon style2 major fa-paintbrush"></span>
 									<h3>Remodeling Consultation</h3>
 									<p>Close participation with contractors and/or architects to confirm new remodels improve the feng shui of your abode.</p>
 								</section>
@@ -292,15 +274,15 @@ if($_POST["submit"]) {
 					<section class="wrapper style1 align-center">
 						<div class="inner medium">
 							<h2>Get in touch</h2>
-							<form method="post" action="#">
+							<form method="POST" action="https://formspree.io/f/mgegooqr">
 								<div class="fields">
 									<div class="field half">
 										<label for="sender">Name</label>
 										<input type="text" name="sender" id="sender" value="" />
 									</div>
 									<div class="field half">
-										<label for="senderEmail">Email</label>
-										<input type="senderEmail" name="senderEmail" id="senderEmail" value="" />
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" value="" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
